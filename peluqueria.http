@@ -1,0 +1,6 @@
+@peluqueria_HostAddress = http://localhost:5283
+
+GET {{peluqueria_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
