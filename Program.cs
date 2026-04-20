@@ -6,8 +6,8 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//Modificar la ruta con la que sale
-builder.WebHost.UseUrls("http://192.168.1.107:5000");
+//Modificar la ruta con la que sale (usar IP del equipo si es local)
+//builder.WebHost.UseUrls("http://192.168.1.93:5000");
 
 // Permitir que otras URLS puedan hacer peticiones 
 builder.Services.AddCors(options =>
@@ -16,7 +16,7 @@ builder.Services.AddCors(options =>
         policy =>
         {
             policy
-                .WithOrigins("http://192.168.1.107", "http://localhost")
+                .WithOrigins("http://192.168.1.93", "http://localhost")
                 .AllowAnyHeader()
                 .AllowAnyMethod();
         });
